@@ -381,14 +381,9 @@ export default function App() {
           }]
         };
 
-              const apiKey = import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
-        
-        if (!apiKey) {
-          setAnalysisResult('❌ לא מצאתי API Key. ודא שהוספת VITE_GEMINI_API_KEY ב-Vercel');
-          return;
-        }
+        const apiKey = ""; 
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
         const response = await fetch(apiUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

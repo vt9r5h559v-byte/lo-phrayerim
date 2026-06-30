@@ -381,8 +381,8 @@ export default function App() {
           }]
         };
 
-        const apiKey = import.meta.env.GEMINI_API_KEY;
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
         const response = await fetch(apiUrl, {
           method: 'POST',
@@ -520,9 +520,8 @@ export default function App() {
           systemInstruction: { parts: [{ text: systemPrompt }] }
         };
 
-        const apiKey = import.meta.env.GEMINI_API_KEY;
-        console.log("API Key:", apiKey);
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
         const response = await fetch(apiUrl, {
           method: 'POST',
